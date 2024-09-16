@@ -15,3 +15,11 @@ class Solution:
             sum += (res[i][1] - res[i][0] + 1)
 
         return sum
+
+        '''
+        seen = set()
+        for a, b in nums:
+            for i in range(a, b+1):
+                seen.add(i)
+        return len(seen)
+        '''
