@@ -1,14 +1,20 @@
 class Solution:
     def uncommonFromSentences(self, s1: str, s2: str) -> List[str]:
-        word_s1 = s1.split(' ')
-        word_s2 = s2.split(' ')
-        words = word_s1 + word_s2
+        words1 = s1.split(' ')
+        words2 = s2.split(' ')
+        words = words1 + words2
+        word_count = {}
 
-        count = Counter(words)
+        for word in words:
+            if word in word_count:
+                word_count[word] += 1
+            else:
+                word_count[word] = 1
+
         res = []
 
-        for s, cnt in count.items():
-            if cnt == 1:
-                res.append(s)
+        for word in word_count:
+            if word_count[word] == 1:
+                res.append(word)
 
         return res
