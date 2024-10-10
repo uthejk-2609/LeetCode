@@ -17,5 +17,3 @@ class Solution:
         while i <= n - 1:
             nums[i] = 0
             i += 1
-
-        return nums
