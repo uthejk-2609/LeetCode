@@ -1,14 +1,16 @@
 class Solution:
     def pickGifts(self, gifts: List[int], k: int) -> int:
         t = 1
-        pq = []
+        n = len(gifts)
 
-        for gift in gifts:
-            heapq.heappush(pq, -gift)
+        for i in range(n):
+            gifts[i] *= -1
+        
+        heapq.heapify(gifts)
 
         while t <= k:
-            curr = -heapq.heappop(pq)
-            heapq.heappush(pq, -int(math.sqrt(curr)))
+            curr = -heapq.heappop(gifts)
+            heapq.heappush(gifts, -int(math.sqrt(curr)))
             t += 1
 
-        return -(sum(pq))
+        return -sum(gifts)
