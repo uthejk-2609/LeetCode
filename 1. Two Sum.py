@@ -1,3 +1,4 @@
+# Soln 1
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         n = len(nums)
@@ -8,6 +9,7 @@ class Solution:
                 return [idx, pair_idx[target - num]]
             pair_idx[num] = idx
 
+# Soln 2
 """
 class Solution:
     def twoSum(self, nums, target):
